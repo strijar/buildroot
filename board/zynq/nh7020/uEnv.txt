@@ -1,1 +1,3 @@
+bootargs=console=ttyPS0,115200n8 earlyprintk root=/dev/mmcblk0p2 rootwait
+fpgaload=load mmc 0 ${kernel_load_address} system_top.bit && fpga loadb 0 ${kernel_load_address} 0x1
 bootcmd=load mmc 0 ${kernel_load_address} ${kernel_image} && load mmc 0 ${devicetree_load_address} ${devicetree_image} && bootm ${kernel_load_address} - ${devicetree_load_address}
